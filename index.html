@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset='UTF-8' />
+    <meta name='viewport' content='width=500, user-scalable=false' />
     <title>saebekassebil</title>
     <style>
       * {
@@ -39,7 +40,6 @@
       .blackbox {
         background-color: black;
         padding: 2em;
-        height: 1em;
         opacity: 0.9;
         margin-bottom: 2em;
       }
@@ -54,6 +54,12 @@
 
       .item {
         display: inline-block;
+      }
+
+      @media only screen and (max-device-width: 480px) {
+        #links li {
+          display: block;
+        }
       }
     </style>
   </head>
