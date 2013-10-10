@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title>saebekassebil</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Helvetica Neue', Helvetica, Arial;
+        font-size: 14pt;
+        color: whitesmoke;
+      }
+
+      a {
+        color: whitesmoke;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      #bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+
+      #links li {
+        display: inline;
+        list-style-type: none;
+      }
+
+      .blackbox {
+        background-color: black;
+        padding: 2em;
+        height: 1em;
+        opacity: 0.9;
+        margin-bottom: 2em;
+      }
+
+      .dot {
+        margin-right: 0.2em;
+      }
+
+      .slim {
+        font-weight: 100;
+      }
+
+      .item {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id='bg'></canvas>
+
+    <div class='blackbox'>
+      <p class='slim'>saebekassebil @ copenhagen, denmark</p>
+    </div>
+    <div class='blackbox'>
+      <ul id='links'>
+        <li>
+          <canvas class='dot' height='15' width='15'></canvas>
+          <a class='slim' href='https://github.com/saebekassebil'>github.com</a>
+        </li>
+        <li>
+          <canvas class='dot' height='15' width='15'></canvas>
+          <a class='slim' href='https://twitter.com/saebekassebil'>twitter.com</a>
+        </li>
+        <li>
+          <canvas class='dot' height='15' width='15'></canvas>
+          <a class='slim' href='mailto:saebekassebil@gmail.com'>saebekassebil@gmail.com</a>
+        </li>
+      </ul>
+    </div>
+    <script src='background.js'>
+      var width = window.innerWidth;
+      var height = window.innerHeight;
+      var bg = document.getElementById('bg');
+      bg.width = width;
+      bg.height = height;
+
+      var count = 0, theme;
+      for (var atheme in background.themes)
+        if (Math.random() < 1/++count)
+          theme = atheme; 
+      
+      background(bg, theme).draw();
+
+      [].slice.call(document.querySelectorAll('.dot')).forEach(function(el) {
+        background(el, theme).draw(10);
+      });
+    </script>
+  </body>
+</html>
