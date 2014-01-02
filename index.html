@@ -2,66 +2,9 @@
 <html>
   <head>
     <meta charset='UTF-8' />
-    <meta name='viewport' content='width=500, user-scalable=false' />
+    <meta name='viewport' content='width=500, user-scalable=no' />
     <title>saebekassebil</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        font-family: 'Helvetica Neue', Helvetica, Arial;
-        font-size: 14pt;
-        color: whitesmoke;
-      }
-
-      a {
-        color: whitesmoke;
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      #bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-      }
-
-      #links li {
-        display: inline;
-        list-style-type: none;
-      }
-
-      .blackbox {
-        background-color: black;
-        padding: 2em;
-        opacity: 0.9;
-        margin-bottom: 2em;
-      }
-
-      .dot {
-        margin-right: 0.2em;
-      }
-
-      .slim {
-        font-weight: 100;
-      }
-
-      .item {
-        display: inline-block;
-      }
-
-      @media only screen and (max-device-width: 480px) {
-        #links li {
-          display: block;
-        }
-      }
-    </style>
+    <link rel='stylesheet' type='text/css' href='style.css' />
   </head>
   <body>
     <canvas id='bg'></canvas>
