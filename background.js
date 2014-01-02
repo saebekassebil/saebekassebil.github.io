@@ -1,7 +1,7 @@
 ;(function() {
   window.background = function(el, theme) {
     var w = el.width, h = el.height;
-    var colors = theme in themes ? themes[theme] : themes.sea;
+    var colors = theme in themes ? themes[theme] : themes.terra;
     var ctx = el.getContext('2d');
 
     function randColor() {
@@ -48,14 +48,6 @@
   }
 
   var themes = background.themes = {
-    sea: [
-      '#1693A5',
-      '#45B5C4',
-      '#7ECECA',
-      '#A0DED6',
-      '#C7EDE8'
-    ],
-
     terra: [
       '#E8DDCB',
       '#CDB380',
